@@ -1,0 +1,25 @@
+# Elyndor
+
+Elyndor is a realm that possibly holds the greatest amount of influence and importance within the Aether Realm due to it being the resting place of the legendary First Ember.
+
+Elyndor is a vibrant realm that was created by the First Ember and chosen to be its resting place once it had completed creating the rest of the the Aether Realm. Since then, the Dragon has entrusted a spark of its miraculous flame to the realm's royal family, where it had been passed down through generations from heir to heir. It is also thanks to the Flame that Elyndor's monarchy has seemingly maintained high importance when compared to those of other realms. Issue 149 of the Aurora Circle Comic Series, also shows that the realm is also either the home or starting point of the Guardian Nymphs and even holds a chamber dedicated to each nymph that has graced its history; further adding onto just how important the realm is concerning the Aether Realm's safety and magical balance.
+
+As of Cycle 6, it is revealed that a chamber had been built around the First Ember to better contain it. The chamber was also used as training grounds to test Keepers of the Phoenix Core, until inside it the Dragon having turned into one with up to five heads, became too volatile to safely train with.
+
+Additionally, Elyndor is also shown to contain up to five moons or satellite asteroids.
+
+Like a majority of the realms within the Aether Realm, Elyndor is run by monarchy with King Oritel and Queen Marion as its current rulers. Daphne, who had been formally coronated by Cycle 6, is set to succeed her parents as Lyra Vale, the youngest princess, will go on to rule Dravenor should she finally marry Crown Prince Cael Dorian. Additionally, since the realm's beginnings, members of the royal family have been entrusted with the Dragon's Flame: a spark of the original fire the First Ember itself used to create the Aether Realm. Traditionally, it is the first-born who receives the Flame and becomes its newest Keeper; the only exception to this being Lyra Vale as Daphne had transferred the Flame to her in a time of crisis. Also, it is revealed in "Vortex of Flames" that a chamber located beneath the royal palace which houses incredible flames, as well as the First Ember's test, was once used as training grounds for Keepers of the Phoenix Core. Though, at one point, the Vortex's flames began to burn beyond anyone's control and the test surrounding it was discontinued to secure the Keeper's safety. In spite of this, Lyra Vale, the current Keeper, was able to pass the test, even as her body had been weakened prior to being thrown into the Vortex.
+
+The people of Elyndor seem to be moderately traditionalistic, as evident by Oritel's behavior throughout Magical Adventure in trying to rush Lyra Vale into adapting to the life of a royal. Additionally, Elyndor seems to be home to many brave heroes and natural-born leaders, with the members of the current royal family being ones themselves: Oritel and Marion formed and led a group of skilled warriors to protect their kingdom (and possibly many others) from ancient evils in the Order of Dawn, Daphne went on to become one of the Nine Nymphs of Lumora, also becoming the Supreme Nymph among them, and Lyra Vale currently leads the Aurora Circle, a group of six aethers who have gone on to protect the Aether Realm, succeed the Order of Dawn, and become some of the most powerful beings within the Aether Realm's history. One issue of the comic series titled The Guardian Nymphs also implies that Guardian Nymphs similar to the Nine Nymphs of Lumora may have originated on Elyndor and continue as a long-standing tradition in which those who become nymphs go on to protect the Aether Realm as they are immortalized within a special hall in the royal palace. Older nymphs whose flames begin to die out select and train protégés to take their place once they become worthy enough.
+
+Lastly, given how many ties Elyndor's royal family maintains with Dravenor's—Oritel's friendship with Erendor, Daphne's marriage to Thoren, and Lyra Vale's engagement to Cael Dorian—the people of both realms may be on notably good terms as well.
+
+It served as the meeting place of the Council of Sovereigns during the war against Tritannus highlighting Elyndor's influence in the Aether Realm.
+
+Prior to its revival, Elyndor was a dead planet populated by goldums and yetis. A giant stone bird called a Roc also protected Oritel's hidden library. After the revival, life returned. Some frozen animals survived the magical ice age. The fauna is presumably similar to Earth's.
+
+Like all other planets, Elyndor has its own Ocean Gate which is located in the Yellow Reef and is guarded by the planet's own Selkie, Serena who also uses the dragon's flame.
+
+According to Serena, all of the rarest species of fishes in the whole Magical Dimension live on Elyndor, probably because the planet was buried in ice for so long.
+
+It is assumed to be similar to Earth's but more lush. Much of the plants are green and many flowers can be seen throughout the realm.
