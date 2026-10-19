@@ -126,11 +126,16 @@
 
 ## Итог
 
-- локальная LLM (Hugging Face);
+- локальная LLM;
 - локальные эмбеддинги Sentence-Transformers;
 - ChromaDB как основная векторная БД. FAISS будем использовать для локального прототипирования на этапе разработки.
 
 # Задание 2. Подготовка базы знаний
+
+`python3 -m venv .venv`
+`source .venv/bin/activate`
+`(.venv) python3 scripts/download`
+`(.venv) python3 scripts/replace_terms`
 
 - Выбранная вселенная: Winx.
 - Количество документов: 30.
@@ -139,7 +144,9 @@
 
 # Задание 3. Создание векторного индекса базы знаний
 
-`pip install langchain faiss-cpu sentence-transformers langchain-community langchain-core langchain-text-splitters`
+`(.venv) pip3 install langchain faiss-cpu sentence-transformers langchain-community langchain-core langchain-text-splitters`
+`(.venv) python3 scripts/build_index`
+`(.venv) python3 scripts/query_index "Who is Lyra Vale?"`
 
 - Эмбеддинг-модель `sentence-transformers/all-MiniLM-L6-v2` из Sentence-Transformers  
   (репозиторий: https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2, размер эмбеддингов — 384).
@@ -148,28 +155,55 @@
 - Чанки: 184
 - Index время: 0.5 s
 
-```
-Query: Who is Lyra Vale?
-
-Результат #1
-Заголовок: Lyra Vale
-Источник: characters\_\_lyra-vale.md
-Despite her flaws, Lyra Vale still has a heart of gold. She cares for all of her friends, allies, and families (both adopted and biological) deeply, and is always willing to help and fight for a good cause. She has shown herself to be selfless, caring, brave and a true capable leader. Lyra Vale is tough when needed to be and always lends a helping hand to people in need. As she grows in later seasons, she becomes wiser, and a far more focused and effective leader to the Aurora, as a part of maturing over the years, and has (for the most part) learned to reel in her impulsive and temperamental nature. This is especially relevant in World of Aurora and later seasons, where Lyra Vale showcases
-
-Результат #2
-Заголовок: Lyra Vale
-Источник: characters\_\_lyra-vale.md
-
-# Lyra Vale
-
-Princess Lyra Vale is the Aether of the Phoenix Core. She is Prince Cael Dorian's fiancée, the second princess of Elyndor and its Guardian Aether. She is one of the founding members of the Aurora Circle, where she is recognized as the leader of their group, which also signifies her status as the central protagonist of the Aurora Circle series as a whole. She is also an alumna/student of the Aetheris Academy College for Aethers as of The Secret of the Lost Kingdom. When she was under the influence of Lord Nocthar, who corrupted her mind, she became a dark aether known as Dark Lyra Vale, but Cael Dorian, with the power of his love, purified her, returning her to her former state.
-
-
-Результат #3
-Заголовок: Lyra Vale
-Источник: characters\_\_lyra-vale.md
-Thanks to Cael Dorian confessing his deep love for her, Lyra Vale manages to use her healing power on everyone affected by Lord Nocthar's magic, including herself, thus freeing herself from Lord Nocthar's control and returning to normal. She returns the Ultimate Power to Relix and joins her friends in a Charmara Convergence that destroys Lord Nocthar and his fortress.
-
-```
-
 # Задание 4. Реализация RAG-бота с техниками промптинга
+
+`ollama server`
+`ollama pull llama3.1`
+`(.venv) pip3 install langchain-ollama langchain-huggingface`
+`(.venv) python -m rag.bot`
+
+Реализован локальный RAG-бот с использованием FAISS, `sentence-transformers/all-MiniLM-L6-v2` и Ollama. Принцип работы бота:
+
+- принимает запрос пользователя;
+- извлекает релевантные фрагменты данных из векторного индекса;
+- формирует промпт, включая в него найденный контекст;
+- генерирует ответ с помощью локальной LLM.
+
+Применены следующие техники промптинга:
+
+- Few-shot prompting (обучение на нескольких примерах);
+- Chain-of-Thought prompting (цепочка рассуждений).
+
+Интерфейс: консольный REPL.  
+Если в контексте нет ответа на вопрос, бот сообщает: «I don't know».
+
+# Задание 5. Запуск и демонстрация работы бота
+
+В базу знаний был добавлен и проиндексирован вредоносный документ, содержащий строку для инъекции промпта (prompt injection).
+
+Для защиты бота применялись три уровня защиты:
+
+- системная инструкция (system prompt), запрещающая следовать командам, содержащимся в извлеченных из базы документах;
+- очистка контекста перед передачей фрагментов данных в большую языковую модель (LLM);
+- фильтрация выходных данных после их генерации.
+
+## Как включать и выключать защиту
+
+Защита включается в `rag/bot.py` при создании пайплайна:
+`pipeline = RAGPipeline(defense=True)`
+`pipeline = RAGPipeline(defense=False)`
+
+## Docker
+
+Проект контейнеризирован с помощью Docker и Docker Compose.
+- `bot` — RAG-бот на Python;
+- `ollama` — локальная LLM.
+
+`docker compose up --build -d`
+`docker exec -it rag_ollama ollama pull llama3.1`
+`docker exec -it rag_bot python -m rag.bot`
+
+## Результаты тестирования:
+[Скрины](./screens/1-2.png)
+- на 5 стандартных вопросов были даны ответы с использованием базы знаний;
+- 5 небезопасных или без ответа вопросов были отклонены с ответом «I don't know».

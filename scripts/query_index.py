@@ -38,6 +38,7 @@ def main() -> None:
         print(f"Результат #{i}")
         print(f"Заголовок: {doc.metadata.get('title')}")
         print(f"Источник: {doc.metadata.get('source')}")
+         print(f"Чанк ID: {doc.metadata.get('chunk_id')}")
         print(doc.page_content[:700])
         print("\n" + "-" * 80 + "\n")
 
