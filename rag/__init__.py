@@ -1,0 +1,1 @@
+"""RAG-бот для локальной knowledge base."""
